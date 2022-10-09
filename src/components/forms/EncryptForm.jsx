@@ -1,27 +1,14 @@
-import { useState } from "react"
 import useEncrypt from "../../hooks/useEncrypt"
 
 import Title from "./Title"
 import TextAreaGroup from "./TextAreaGroup"
 
 const EncryptForm = () => {
-  // const [ plainTextInput, setPlainTextInput ] = useState("")
-  // const [ keyStr, setKeyStr ] = useState([])
-  const { plainText, onPlainTextChange, key, generateKey, cipherText, shiftedBoard, setShiftedBoard, shiftValue, setShiftValue } = useEncrypt()
-console.log(plainText)
-console.log(key)
-console.log(shiftedBoard)
-console.log(shiftValue)
+  const { plainText, onPlainTextChange, key, cipherText, startEncrypt } = useEncrypt()
+
   const encrypt = (e) => {
     e.preventDefault()
-    // setPlainText(plainTextInput)
-    // const keyAndBoard = generateKey()
-    generateKey()
-    // const keyStr = keyAndBoard?.key
-    // setShiftedBoard(keyAndBoard?.shiftedBoard)
-    // setShiftValue(keyAndBoard?.shiftValue)
-    // setKeyStr(keyStr)
-    // onKeyChange(keyStr)
+    startEncrypt()
   }
 
   return (

@@ -17,7 +17,39 @@ const useEncrypt = () => {
 
   const onShiftValueChange = (value) => setShiftValue(value)
 
-  const generateKey = () => {
+  const onCipherTextChange = (value) => setCipherText(value)
+
+  const createNumPairs = useCallback(() => {
+    const arr = []
+
+    key.forEach((_, i) => {
+      if (i % 2 === 0) {
+        arr.push({ a: key[i], b: key[i + 1] })
+      }
+    })
+
+    return arr
+  }, [key])
+
+  const encrypt = useCallback(() => {
+    const valuePairs = createNumPairs()
+
+    let res = plainText.trim()
+    valuePairs.forEach(el => {
+      res = res.replace(shiftedBoard[el.a], shiftedBoard[el.b]) 
+    })
+
+    return base64Encode(`${res}/${shiftValue}/`)
+  }, [createNumPairs, plainText, shiftValue, shiftedBoard])
+
+  useEffect(() => {
+    if (key) {
+      const result = encrypt()
+      onCipherTextChange(result)
+    }
+  }, [key, encrypt])
+
+  const startEncrypt = () => {
     if (!plainText) return
   
     // Get the number of positions that the Board should shift to the right
@@ -45,51 +77,14 @@ const useEncrypt = () => {
     onKeyChange(key)
     onBoardChange(shiftedBoard)
     onShiftValueChange(shiftValue)
-  
-    // return { key, shiftedBoard, shiftValue }
   }
 
-  const createNumPairs = useCallback(() => {
-    const arr = []
-
-    key.forEach((_, i) => {
-      if (i % 2 === 0) {
-        arr.push({ a: key[i], b: key[i + 1] })
-      }
-    })
-
-    return arr
-  }, [key])
-
-  const encrypt = useCallback(() => {
-    const valuePairs = createNumPairs()
-
-    let res = plainText
-    valuePairs.forEach(el => {
-      res = res.replace(shiftedBoard[el.a], shiftedBoard[el.b]) 
-    })
-
-    return base64Encode(`${res}/${shiftValue}/`)
-  }, [createNumPairs, plainText, shiftValue, shiftedBoard])
-
-  useEffect(() => {
-    if (key) {
-      const result = encrypt()
-      setCipherText(result)
-    }
-  }, [key, encrypt])
-
   return { 
-    plainText,
-    onPlainTextChange,
-    key,
-    onKeyChange, 
-    generateKey,
+    plainText, 
+    onPlainTextChange, 
+    key, 
     cipherText, 
-    shiftedBoard,
-    setShiftedBoard, 
-    shiftValue,
-    setShiftValue 
+    startEncrypt 
   }
 }
 
