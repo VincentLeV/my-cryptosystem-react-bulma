@@ -1,6 +1,8 @@
 import { useState } from "react"
 
 import Navbar from "./components/navigation/Navbar"
+import EncryptForm from "./components/forms/EncryptForm"
+import DecryptForm from "./components/forms/DecryptForm"
 
 const App = () => {
     const [ activeTab, setActiveTab ] = useState(0)
@@ -11,14 +13,10 @@ const App = () => {
         <>
             <Navbar activeTab={activeTab} onChangeTab={onChangeTab} />
 
-            <main>
-                <div className="container is-fluid">
-                    <h1 className="title">
-                        Hello World
-                    </h1>
-                    <p className="subtitle">
-                        My first website with <strong>Bulma</strong>!
-                    </p>
+            <main className="container is-fluid">
+                <div className="columns" style={{ margin: "1.5rem 0" }}>
+                    <EncryptForm />
+                    <DecryptForm />
                 </div>
             </main>
         </>

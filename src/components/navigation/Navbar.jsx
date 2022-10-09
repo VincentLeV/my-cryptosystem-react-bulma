@@ -5,7 +5,7 @@ const Navbar = ({ activeTab, onChangeTab }) => {
     <nav className="navbar is-success" role="navigation" aria-label="main navigation">
       <div className="navbar-brand">
         <a className="navbar-item" href="https://bulma.io">
-          My Cryptosystem
+          MY CRYPTOSYSTEM
         </a>
       </div>
 
