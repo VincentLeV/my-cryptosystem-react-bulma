@@ -1,3 +1,16 @@
+.app-logo {
+  margin-right: 0.5rem;
+}
+
+#app-footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 1rem;
+  text-align: center;
+}
+
 @media only screen and (min-width: 500px) {
   .horizontal-line {
     display: none;
@@ -7,5 +20,9 @@
 @media only screen and (max-width: 768px) {
   .placeholder {
     display: none;
+  }
+
+  #app-footer {
+    position: static;
   }
 }

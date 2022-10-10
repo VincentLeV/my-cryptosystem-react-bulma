@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react"
 
+import appLogo from "../../assets/app-logo.png"
 import { NAV_ITEMS } from "../../constants"
 
 const Navbar = ({ activeTab, onChangeTab }) => {
@@ -27,21 +28,21 @@ const Navbar = ({ activeTab, onChangeTab }) => {
     <nav className="navbar is-success" role="navigation" aria-label="main navigation">
       <div className="navbar-brand">
         <a className="navbar-item" href="/">
+          <img src={appLogo} alt="App Logo" width="24" height="24" className="app-logo" />
           MY CRYPTOSYSTEM
         </a>
 
-        <a 
+        <button 
           id="hamburger" 
-          role="button" 
           className="navbar-burger" 
           aria-label="menu" 
-          aria-expanded="false" 
+          aria-expanded={isHamburgerActive} 
           onClick={onToggleHamburger}
         >
           <span aria-hidden="true"></span>
           <span aria-hidden="true"></span>
           <span aria-hidden="true"></span>
-        </a>
+        </button>
       </div>
 
       <div id="nav-menu" className="navbar-menu is-active">

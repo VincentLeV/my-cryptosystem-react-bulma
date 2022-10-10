@@ -14,7 +14,7 @@ const App = () => {
         <>
             <Navbar activeTab={activeTab} onChangeTab={onChangeTab} />
 
-            <main className="container is-fluid">
+            <main className="container content is-fluid">
                 {
                     activeTab === 0 ? (
                         <div className="columns section">
@@ -29,6 +29,10 @@ const App = () => {
                     )
                 }
             </main>
+
+            <footer id="app-footer">
+                Designed & developed by <a href="https://www.vincentle.me/">Vincent Le</a> © 2022
+            </footer>
         </>
     )
 }
