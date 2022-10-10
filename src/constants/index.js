@@ -1,4 +1,4 @@
-export const navItems = [
+export const NAV_ITEMS = [
   {
     name: "Home",
     value: 0,

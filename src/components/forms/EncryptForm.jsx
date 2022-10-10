@@ -1,6 +1,6 @@
 import useEncrypt from "../../hooks/useEncrypt"
 
-import Title from "./Title"
+import Title from "../Title"
 import TextAreaGroup from "./TextAreaGroup"
 
 const EncryptForm = () => {

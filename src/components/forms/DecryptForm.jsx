@@ -1,6 +1,6 @@
 import useDecrypt from "../../hooks/useDecrypt"
 
-import Title from "./Title"
+import Title from "../Title"
 import TextAreaGroup from "./TextAreaGroup"
 
 const DecryptForm = () => {

@@ -29,12 +29,13 @@ const TextAreaGroup = ({
         />
       </div>
 
-      <div className="column is-one-third">
+      <div className="column is-two-fifths">
+        <label className="label column placeholder"></label>
         <button 
           type="button" 
           className="button is-small is-link"
           onClick={copyInput}
-          style={{ margin: "2rem 0.8rem 0.5rem 0" }}
+          style={{ marginRight: "0.8rem" }}
         >
           Copy
         </button>
@@ -44,7 +45,6 @@ const TextAreaGroup = ({
               type="button" 
               className="button is-small is-light"
               onClick={clearInput}
-              style={{ margin: "2rem 0 0.5rem 0" }}
             >
               Clear
             </button>
