@@ -18,6 +18,7 @@ const EncryptForm = () => {
       <TextAreaGroup 
         id="plaintText" 
         label="Plaintext *" 
+        placeholder="Original message contains only alphanumeric character, blank space and and these following symbols ,.-:'?"
         required
         value={plainText}
         setValue={onPlainTextChange}
@@ -27,6 +28,7 @@ const EncryptForm = () => {
       <TextAreaGroup 
         id="key" 
         label="Key" 
+        placeholder="Auto-generated for you"
         value={key}
         readOnly
         showClearButton={false}
@@ -44,6 +46,7 @@ const EncryptForm = () => {
       <TextAreaGroup 
         id="cipherText" 
         label="Ciphertext" 
+        placeholder="Generated encrypted message"
         value={cipherText}
         readOnly
         showClearButton={false}

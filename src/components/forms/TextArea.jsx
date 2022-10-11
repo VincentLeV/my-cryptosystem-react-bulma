@@ -7,7 +7,7 @@ const TextArea = ({ id, label, children, ...props }) => {
           className="textarea is-success is-small"
           type="textarea" 
           id={id}
-          rows={4} 
+          rows={3} 
           {...props}
         >
           {children}

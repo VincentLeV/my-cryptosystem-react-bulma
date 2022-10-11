@@ -23,7 +23,7 @@ const App = () => {
                             <DecryptForm />
                         </div>
                     ) : (
-                        <div className="section">
+                        <div className="section" style={{ minHeight: "77vh" }}>
                             <Info />
                         </div>
                     )

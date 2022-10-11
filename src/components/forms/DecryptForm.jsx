@@ -18,6 +18,7 @@ const DecryptForm = () => {
       <TextAreaGroup 
         id="cipherText" 
         label="Ciphertext *"
+        placeholder="Encrypted message"
         value={cipherText} 
         setValue={onCipherTextChange}
         onChange={(e) => onCipherTextChange(e.target.value)}
@@ -27,6 +28,7 @@ const DecryptForm = () => {
       <TextAreaGroup 
         id="key" 
         label="Key *" 
+        placeholder="The auto-generated key when you encrypt the original message"
         value={key}
         setValue={onKeyChange}
         onChange={(e) => onKeyChange(e.target.value)}
@@ -45,6 +47,7 @@ const DecryptForm = () => {
       <TextAreaGroup 
         id="plaintText" 
         label="Plaintext" 
+        placeholder="Decrypted message"
         value={plainText}
         readOnly
         showClearButton={false}
