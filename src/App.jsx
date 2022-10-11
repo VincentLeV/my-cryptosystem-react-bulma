@@ -30,8 +30,10 @@ const App = () => {
                 }
             </main>
 
-            <footer id="app-footer">
-                Designed & developed by <a href="https://www.vincentle.me/">Vincent Le</a> © 2022
+            <footer className="footer">
+                <div class="has-text-centered">
+                    Designed & developed by <a href="https://www.vincentle.me/">Vincent Le</a> © 2022
+                </div>
             </footer>
         </>
     )
