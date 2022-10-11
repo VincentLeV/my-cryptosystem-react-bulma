@@ -4,10 +4,10 @@ const TextArea = ({ id, label, children, ...props }) => {
       <div className="control">
         <label htmlFor={id} className="label">{label}</label>
         <textarea 
-          className="textarea is-success is-small"
+          className="textarea is-success"
           type="textarea" 
           id={id}
-          rows={3} 
+          rows={2} 
           {...props}
         >
           {children}

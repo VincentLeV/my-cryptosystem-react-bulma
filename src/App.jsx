@@ -17,13 +17,13 @@ const App = () => {
             <main className="container content is-fluid">
                 {
                     activeTab === 0 ? (
-                        <div className="columns section">
+                        <div className="columns section" style={{ minHeight: "87vh" }}>
                             <EncryptForm />
                             <hr className="horizonal-line"/>
                             <DecryptForm />
                         </div>
                     ) : (
-                        <div className="section" style={{ minHeight: "77vh" }}>
+                        <div className="section" style={{ minHeight: "87vh" }}>
                             <Info />
                         </div>
                     )
